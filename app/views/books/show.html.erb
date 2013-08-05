@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <div class="contentwrapper">
-  <div class="left"><img width="150px" src='<%= @book.img_url %>'/></div>
+  <div class="left">
+  <% if @book.img_url.length > 0 %>
+  <%= image_tag(@book.img_url, :width => "150px") %>
+  <% end %>
+  </div>
   <div class="left">
     <p><%= @book.author %></p>
     <h2><%= @book.title %></h2>
@@ -31,6 +35,7 @@
     <% if user_signed_in? %>
       <p>
 	    <%= link_to '<i class="icon-pencil"></i> Edit'.html_safe, edit_book_path(@book) %> |
+	    <%= link_to '<i class="icon-trash"></i> Delete'.html_safe, @book, method: :delete, data: { confirm: 'Are you sure?' } %> |
 	    <% if @reservation == nil %>
 	      <%= link_to '<i class="icon-shopping-cart"></i> Reserve'.html_safe, { :controller => "reservations", :action => "create", :reservation => {:book_id => @book.id, :user_id => current_user.id, :begin_date => Time.now }}, :method => "post" %> |
 	    <% end %>
