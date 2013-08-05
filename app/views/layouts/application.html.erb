@@ -74,10 +74,10 @@
     <div class="wrapper">
         <header>
             <a href="#" class="logo hidden-phone">cloudControl</a>
-            <form class="navbar-search pull-right">
-              <input type="text" class="search-query" placeholder="Search">
-            </form>
-        </header>        
+            <%= form_tag("/books", method: "get", :class => "navbar-search pull-right") do %>
+			  <%= text_field_tag :search, "", :class => "search-query", :placeholder => "Search" %>
+			<% end %>
+        </header>
     <div class="content">
     <%= yield %>
     </div>

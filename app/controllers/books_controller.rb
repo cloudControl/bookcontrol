@@ -3,7 +3,11 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    if params[:search]
+      @books = Book.search(params[:search])
+    else
+      @books = Book.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
