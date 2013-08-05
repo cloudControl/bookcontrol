@@ -1,0 +1,14 @@
+<% if alert %>
+<div class="alert alert-error"><%= alert %></div>
+<% end %>
+<h1>BookControl</h1>
+<p>
+Welcome to your library
+</p>
+<p>
+<% if current_user == nil %>
+<%= link_to "Sign in", users_path %>
+<% else %>
+<%= link_to "Books", books_path %>
+<% end %>
+</p>

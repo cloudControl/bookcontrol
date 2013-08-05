@@ -1,0 +1,24 @@
+<h1>Listing open reservations</h1>
+<span>Click on booktitle or username to filter the results</span>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Book title</th>
+    <th>User name</th>
+    <th>Begin date</th>
+    <th>Return date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @reservations.each do |r| %>
+  <tr>
+	<td><%= link_to r[:book].title, '/reservations/?book_id=' + r[:book].id %></td>
+    <td><%= link_to r[:user].name, '/reservations/?user_id=' + r[:user].id %></td>
+    <td><%= r[:reservation].begin_date %></td>
+    <td><%= r[:reservation].return_date %></td>
+    <td><%= link_to '<i class="icon-search"></i>'.html_safe, r[:reservation] %></td>
+    <td><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_reservation_path(r[:reservation]) %></td>
+    <td><%= link_to '<i class="icon-trash"></i>'.html_safe, r[:reservation], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>

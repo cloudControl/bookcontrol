@@ -1,0 +1,22 @@
+<h1>Listing users</h1>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td>
+      <%= link_to '<i class="icon-search"></i>'.html_safe, user %>
+      <% if can? :manage, user %>
+      | <%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_user_path(user) %>
+      | <%= link_to '<i class="icon-trash"></i>'.html_safe, user, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<br />

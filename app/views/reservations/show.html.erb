@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+<div class="contentwrapper">
+  <div class="left">
+    <h2><%= @r[:book].title %></h2>   
+    <p><%= @r[:user].name %></p>
+    <p>Begin Date: <%= @r[:reservation].begin_date %></p>
+    <p>Return Date: <%= @r[:reservation].return_date %></p>
+  </div>
+  <div class="left">
+    <p>
+      <%= link_to '<i class="icon-pencil"></i> Edit'.html_safe, edit_reservation_path(@r[:reservation]) %> |
+      <%= link_to '<i class="icon-arrow-left"></i> Back'.html_safe, reservations_path %>
+    </p>
+  </div>
+  <div class="clearer"></div>
+</div>

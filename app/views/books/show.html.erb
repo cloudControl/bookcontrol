@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<div class="contentwrapper">
+  <div class="left"><img width="150px" src='<%= @book.img_url %>'/></div>
+  <div class="left">
+    <p><%= @book.author %></p>
+    <h2><%= @book.title %></h2>
+    <p><%= @book.publisher %><br /><%= @book.category %></p>
+    <p>
+      <b>Isbn:</b> <%= @book.isbn %>
+    </p>
+    <p>
+      <% if @book.amazon_link.length > 0 %><a href='<%= @book.amazon_link %>'>Read details at amazon</a><% end %>
+    </p>
+    <p>
+      <b>Proposal:</b> <%= @book.proposal %>
+    </p>
+    <% if @reservation %>
+      <% if @owner.id == current_user.id %>
+	  <p>
+	    <b>You reserve this book since:</b> <%= Time.diff(Time.now, @reservation.begin_date)[:diff] %>
+	  </p>
+      <% else %>
+	  <p>
+	    <b>The book is reserved by <%= link_to @owner.name, @owner %> since:</b> <%= Time.diff(Time.now, @reservation.begin_date)[:diff] %>
+	  </p>
+	  <% end %>
+    <% end %>
+  </div>
+  <div class="left">
+    <% if user_signed_in? %>
+      <p>
+	    <%= link_to '<i class="icon-pencil"></i> Edit'.html_safe, edit_book_path(@book) %> |
+	    <% if @reservation == nil %>
+	      <%= link_to '<i class="icon-shopping-cart"></i> Reserve'.html_safe, { :controller => "reservations", :action => "create", :reservation => {:book_id => @book.id, :user_id => current_user.id, :begin_date => Time.now }}, :method => "post" %> |
+	    <% end %>
+	    <% if @reservation and @reservation.user_id.to_s == current_user.id.to_s %>
+	      <%= link_to '<i class="icon-retweet"></i> Release'.html_safe, { :controller => "reservations", :action => "update", :id => @reservation.id, :reservation => {:book_id => @book.id, :user_id => current_user.id, :return_date => Time.now }}, :method => "put" %> |
+	    <% end %>
+	    <%= link_to '<i class="icon-qrcode"></i> QR code'.html_safe, { :controller => "books", :action => "qr", :id => "#{ @book.id }.svg" }, :rel => 'lightbox' %> |
+	    <%= link_to '<i class="icon-arrow-left"></i> Back'.html_safe, books_path %>
+	  </p>
+    <% end %>
+  </div>
+  <div class="clearer"></div>
+</div>

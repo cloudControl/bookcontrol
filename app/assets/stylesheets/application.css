@@ -1,0 +1,211 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require lightbox/css/lightbox
+ *= require_tree .
+ */
+@import url(normalize.css);
+@font-face {
+  font-family: 'WebSymbols';
+  src: url("websymbols_regular.eot");
+  src: url("websymbols_regular.eot?#iefix") format("embedded-opentype"), url("websymbols_regular.woff") format("woff"), url("websymbols_regular.ttf") format("truetype"), url("websymbols_regular.svg#WebSymbols") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.websymbols {
+  font-family: 'WebSymbols';
+}
+
+@font-face {
+  font-family: 'TitilliumText';
+  src: url("TitilliumText22L002-webfont.eot");
+  src: url("TitilliumText22L002-webfont.eot?#iefix") format("embedded-opentype"), url("TitilliumText22L002-webfont.woff") format("woff"), url("TitilliumText22L002-webfont.ttf") format("truetype"), url("TitilliumText22L002-webfont.svg#TitilliumText22L002") format("svg");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TitilliumText';
+  src: url("TitilliumText22L003-webfont.eot");
+  src: url("TitilliumText22L003-webfont.eot?#iefix") format("embedded-opentype"), url("TitilliumText22L003-webfont.woff") format("woff"), url("TitilliumText22L003-webfont.ttf") format("truetype"), url("TitilliumText22L003-webfont.svg#TitilliumText22L003") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TitilliumText';
+  src: url("TitilliumText22L004-webfont.eot");
+  src: url("TitilliumText22L004-webfont.eot?#iefix") format("embedded-opentype"), url("TitilliumText22L004-webfont.woff") format("woff"), url("TitilliumText22L004-webfont.ttf") format("truetype"), url("TitilliumText22L004-webfont.svg#TitilliumText22L004") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TitilliumText';
+  src: url("TitilliumText22L005-webfont.eot");
+  src: url("TitilliumText22L005-webfont.eot?#iefix") format("embedded-opentype"), url("TitilliumText22L005-webfont.woff") format("woff"), url("TitilliumText22L005-webfont.ttf") format("truetype"), url("TitilliumText22L005-webfont.svg#TitilliumText22L005") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+html {
+  background: url("bg_noise.jpg") repeat 0 0;
+  height: 100%;
+  font: 62.5%/20pt "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+html.wooden {
+  background: url("wood.png") repeat 0 0;
+}
+
+.contentwrapper {
+  margin: 0 auto;
+}
+
+.clearer { clear:both;}
+header {
+  padding: 10px 30px;
+  margin: 40px 0 0 0;
+  border: 1px solid #d9d9d9;
+  border-left: 10px solid #d9d9d9;
+  border-bottom: none;
+  background-color: #ffffff;
+  height: 45px;
+  -webkit-border-radius: 0 5px 0 0;
+  -moz-border-radius: 0 5px 0 0;
+  -ms-border-radius: 0 5px 0 0;
+  -o-border-radius: 0 5px 0 0;
+  -webkit-box-shadow: 4px 4px 6px -5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 4px 4px 6px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 6px -5px rgba(0, 0, 0, 0.2);
+  border-radius: 0 5px 0 0;
+}
+
+.container .logo {
+  background: url("logo.png") no-repeat;
+  background-size: 41px;
+  display: inline-block;
+  height: 30px;
+  overflow: hidden;
+  text-indent: -999px;
+  width: 55px;
+  margin-top: 8px;
+}
+
+header .logo {
+  background: url("logo.png") no-repeat;
+  background-size: 75px;
+  display: inline-block;
+  height: 45px;
+  overflow: hidden;
+  text-indent: -999px;
+  width: 117px;
+}
+
+.left { 
+  float:left;
+  padding: 15px;
+}
+.left h2 {
+  margin-top: 0px;
+}
+
+body {
+        background: url("bg_noise.jpg") repeat 0 0;
+        padding-top: 20px;
+        padding-bottom: 60px;
+        margin: 0 auto;
+      }
+      .content {
+        border: 1px solid #b7b7b7;
+        border-left: 10px solid #b7b7b7;
+        background-color: #f7f7f7;
+        padding: 15px;
+        -webkit-box-shadow: 4px 4px 6px -5px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 4px 4px 6px -5px rgba(0, 0, 0, 0.2);
+        box-shadow: 4px 4px 6px -5px rgba(0, 0, 0, 0.2);
+      }
+      /* Custom container */
+      .wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+
+      }
+      .wrapper > hr {
+        margin: 60px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 80px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+      a.brand, a.brand:focus, a.brand:hover, a.brand:focus {
+        background-color: transparent;
+      }
+
+      table tr td img {
+        width: 50px;
+      }
+
+      td {
+        vertical-align:middle;
+      }
+
+      /* Customize the navbar links to be fill the entire space of the .navbar */
+      /*.navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,.75);
+        border-right: 1px solid rgba(0,0,0,.1);
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }*/

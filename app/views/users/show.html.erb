@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<div class="contentwrapper">
+  <div class="left">
+    <h2><%= @user.name %></h2>
+    <p><%= @user.email %></p>
+    <% if books = ReservationsHelper.getReservedBooks(@user.id) and books.size > 0 %>
+    <h4>Reserved books</h4>
+    <ul>
+      <% books.each do |book| %>
+      <li><%= link_to book.title, book %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+  <div class="left">
+    <% if user_signed_in? %>
+      <p>
+      	<% if can? :manage, @user %>
+        <%= link_to '<i class="icon-pencil"></i> Edit'.html_safe, edit_user_path(@user) %> |
+        <% end %>
+        <%= link_to '<i class="icon-arrow-left"></i> Back'.html_safe, users_path %>
+      </p>
+    <% end %>
+  </div>
+  <div class="clearer"></div>
+</div>
