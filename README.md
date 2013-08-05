@@ -18,7 +18,7 @@ cctrlapp APP_NAME/default addon.add sendgrid.starter
 cctrlapp APP_NAME/default deploy
 ```
 
-Init the app when app is deployed
+### Init the app when app is deployed
 ```bash
 cctrlapp APP_NAME/default run bash
 ```
