@@ -1,10 +1,9 @@
 ## Installation
 
-### Create app on cloudControl
+### Create app and push the code to cloudControl
 ```bash
 cctrlapp APP_NAME create ruby
 cctrlapp APP_NAME/default push
-cctrlapp APP_NAME/default deploy
 ```
 
 ### Add required addons
@@ -14,11 +13,16 @@ cctrlapp APP_NAME/default addon.add mongosoup.test
 cctrlapp APP_NAME/default addon.add sendgrid.starter
 ```
 
-### Init app
+### Deploy app
+```bash
+cctrlapp APP_NAME/default deploy
+```
+
+Init the app when app is deployed
 ```bash
 cctrlapp APP_NAME/default run bash
 ```
 
-#### in the remote console
+#### Execute in the remote console
 `rake db:setup`
 
