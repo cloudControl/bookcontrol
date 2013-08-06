@@ -7,7 +7,6 @@ Bookcontrol::Application.routes.draw do
   resources :users
   resources :books
   match 'books/qr/:id' => 'books#qr'
-  match 'books/isbn/:isbn' => 'books#isbn'
   resources :reservations
 
   # The priority is based upon order of creation:

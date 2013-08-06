@@ -102,24 +102,4 @@ class BooksController < ApplicationController
       format.svg  { render :qrcode => (url_for @book), :level => :l, :unit => 5 }
     end
   end
-
-  def isbn
-    res = Net::HTTP.get(URI('http://openlibrary.org/api/books?bibkeys=ISBN:' + params[:isbn] + '&jscmd=data&format=json'))
-    data = JSON.parse(res)["ISBN:#{ params[:isbn] }"]
-
-    if not data.nil?
-      puts data
-      if data["authors"].nil?
-        res = Net::HTTP.get(URI('http://openlibrary.org/api/books?bibkeys=ISBN:' + params[:isbn] + '&jscmd=details&format=json'))
-        details = JSON.parse(res)["ISBN:#{ params[:isbn] }"]
-        puts details
-        data["authors"] = details["details"]["authors"]
-      end
-    end
-
-    respond_to do |format|
-      format.html { render json: data }
-      format.json { render json: data }
-    end
-  end
 end
