@@ -7,7 +7,7 @@ one:
   publisher: MyString
   category: MyString
   img_url: MyString
-  amazon_link: MyString
+  link: MyString
   proposal: false
 
 two:
@@ -17,5 +17,5 @@ two:
   publisher: MyString
   category: MyString
   img_url: MyString
-  amazon_link: MyString
+  link: MyString
   proposal: false

@@ -13,31 +13,32 @@
 
   <div class="field">
     <%= f.label :isbn %><br />
-    <%= f.text_field :isbn %>
+    <%= f.text_field :isbn, :id => 'isbn' %>
+    <legend><small>Type the ISBN number and give OpenLibrary a try to fetch the rest.</small></legend>
   </div>
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :id => 'title' %>
   </div>
   <div class="field">
     <%= f.label :author %><br />
-    <%= f.text_field :author %>
+    <%= f.text_field :author, :id => 'author' %>
   </div>
   <div class="field">
     <%= f.label :publisher %><br />
-    <%= f.text_field :publisher %>
+    <%= f.text_field :publisher, :id => 'publisher' %>
   </div>
   <div class="field">
     <%= f.label :category %><br />
-    <%= f.text_field :category %>
+    <%= f.text_field :category, :id => 'category' %>
   </div>
   <div class="field">
     <%= f.label :img_url %><br />
-    <%= f.text_field :img_url %>
+    <%= f.text_field :img_url, :id => 'img_url' %>
   </div>
   <div class="field">
-    <%= f.label :amazon_link %><br />
-    <%= f.text_field :amazon_link %>
+    <%= f.label :link %><br />
+    <%= f.text_field :link, :id => 'link' %>
   </div>
   <div class="field">
     <%= f.label :proposal %><br />

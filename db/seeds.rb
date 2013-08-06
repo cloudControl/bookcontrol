@@ -18,7 +18,7 @@ book = Book.create! :isbn => '978-3446238978',
   :publisher => 'Harry Rowohlt',
   :category => 'Lehrbuch',
   :img_url => 'http://ecx.images-amazon.com/images/I/41udljuMgYL._BO2,204,203,200_PIsitb-sticker-arrow-click,TopRight,35,-76_SX385_SY500_CR,0,0,385,500_SH20_OU03_.jpg',
-  :amazon_link => 'http://www.amazon.de/Das-tollste-ABC-Welt-Schamp/dp/3446238972',
+  :link => 'http://www.amazon.de/Das-tollste-ABC-Welt-Schamp/dp/3446238972',
   :proposal => false
 
 puts 'New book created: ' << book.title

@@ -14,7 +14,7 @@
       <b>Isbn:</b> <%= @book.isbn %>
     </p>
     <p>
-      <% if @book.amazon_link.length > 0 %><a href='<%= @book.amazon_link %>'>Read details at amazon</a><% end %>
+      <% if @book.link.length > 0 %><a href='<%= @book.link %>'>Read details</a><% end %>
     </p>
     <p>
       <b>Proposal:</b> <%= @book.proposal %>
